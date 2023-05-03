@@ -36,9 +36,7 @@ function init() {
 
   volumeRange.addEventListener("change", changeVolume);
 
-  function changeVolume(event){
-    //hornSound.volume = event.target.value;
-    
+  function changeVolume(event){    
     if(event.target.value == 0){
       volumeImg.src = "/assets/icons/volume-level-0.svg";
     }
@@ -54,12 +52,14 @@ function init() {
     else if(event.target.value >= 67){
       volumeImg.src = "/assets/icons/volume-level-3.svg";
     }
+    hornSound.volume = (event.target.value)/100;
+
   }
 
-  /*const playSoundButton = document.querySelector("button");
+  const playSoundButton = document.querySelector("button");
 
   playSoundButton.addEventListener("click", playSound);
   function playSound(event){
-    hornSound.play;
-  }*/
+    hornSound.play();
+  }
 };
