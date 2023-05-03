@@ -30,4 +30,36 @@ function init() {
       hornSound.src = "/assets/audio/party-horn.mp3"
     }
   }
+
+  let volumeRange = document.getElementById("volume-controls");
+  let volumeImg = document.querySelector("#volume-controls img");
+
+  volumeRange.addEventListener("change", changeVolume);
+
+  function changeVolume(event){
+    //hornSound.volume = event.target.value;
+    
+    if(event.target.value == 0){
+      volumeImg.src = "/assets/icons/volume-level-0.svg";
+    }
+    
+    else if(event.target.value >= 1 && event.target.value < 33){
+      volumeImg.src = "/assets/icons/volume-level-1.svg";
+    }
+
+    else if(event.target.value >= 33 && event.target.value < 67){
+      volumeImg.src = "/assets/icons/volume-level-2.svg";
+    }
+
+    else if(event.target.value >= 67){
+      volumeImg.src = "/assets/icons/volume-level-3.svg";
+    }
+  }
+
+  /*const playSoundButton = document.querySelector("button");
+
+  playSoundButton.addEventListener("click", playSound);
+  function playSound(event){
+    hornSound.play;
+  }*/
 };
