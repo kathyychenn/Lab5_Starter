@@ -3,7 +3,6 @@
 window.addEventListener('DOMContentLoaded', init);
 
 function init() {
-  // TODO
   const synth = window.speechSynthesis;
 
   const inputTxt = document.querySelector("textarea");
@@ -13,6 +12,7 @@ function init() {
 
   let voices = [];
 
+  // load all available voices and populate select voice dropdown
   function populateVoiceList() {
     voices = synth.getVoices();
 
@@ -31,6 +31,7 @@ function init() {
     speechSynthesis.onvoiceschanged = populateVoiceList;
   }
 
+  // click "Press to talk" button -> text spoken in selected voice
   talkButton.onclick = (event) => {
     event.preventDefault();
 
@@ -44,10 +45,15 @@ function init() {
     }
 
     synth.speak(utterThis);
+
+    // open smile when talking
     if(synth.speaking){
       smileImg.src = "assets/images/smiling-open.png";
     }
     
-    
+    // closed smile when not talking
+    utterThis.onend = (event) => {
+      smileImg.src = "assets/images/smiling.png";
+    };
   };
 }
