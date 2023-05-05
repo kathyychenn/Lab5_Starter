@@ -1,3 +1,4 @@
 # Lab 5 - Starter
 
-[expose](assets/scripts/expose.js)
+[expose](https://kathyychenn.github.io/Lab5_Starter/expose.html)
+[explore](https://kathyychenn.github.io/Lab5_Starter/explore.html)
