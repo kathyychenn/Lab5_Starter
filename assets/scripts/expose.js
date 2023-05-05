@@ -14,18 +14,18 @@ function init() {
   selectElement.addEventListener("change", changeHorn);
   function changeHorn(event){
     if(event.target.value == "air-horn"){
-      hornImg.src = "/assets/images/air-horn.svg";
-      hornSound.src = "/assets/audio/air-horn.mp3"
+      hornImg.src = "assets/images/air-horn.svg";
+      hornSound.src = "assets/audio/air-horn.mp3"
     }
 
     else if(event.target.value == "car-horn"){
-      hornImg.src = "/assets/images/car-horn.svg";
+      hornImg.src = "assets/images/car-horn.svg";
       hornSound.src = "assets/audio/car-horn.mp3";
     }
     
     else if(event.target.value == "party-horn"){
-      hornImg.src = "/assets/images/party-horn.svg";
-      hornSound.src = "/assets/audio/party-horn.mp3"
+      hornImg.src = "assets/images/party-horn.svg";
+      hornSound.src = "assets/audio/party-horn.mp3"
     }
   }
 
